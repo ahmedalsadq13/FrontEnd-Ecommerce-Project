@@ -5,19 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ECommerce Project</title>
     <link rel="stylesheet" href="/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
-    <h1>Hello World</h1>
-
-    <header>
+    <header class="main-header">
+      <div class="container">
+        <!-- <img src="" alt="company name" class="logo" /> -->
 
         <nav>
-            <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
+          <a href="/"><h2>CN</h2></a>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/pages/products.html">Products</a></li>
+            <li><a href="/pages/about-us.html">About Us</a></li>
+            <li><a href="/pages/contact-us.html">Contact Us</a></li>
+          </ul>
+
+          <div class="right-side">
+            <!-- <input type="search" name="search" id="search" placeholder="Search..." /> -->
+
+            <button class="search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="cart-open">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <button class="favourite"><i class="fa-solid fa-heart"></i></button>
+            <button class="user"><i class="fa-solid fa-user"></i></button>
+          </div>
         </nav>
+      </div>
     </header>
+
+    <main class="container">
+      <section>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          consectetur quibusdam, itaque voluptates cupiditate pariatur odit
+          quidem blanditiis obcaecati suscipit eius modi totam illo debitis
+          quos. Eos, ratione? Tenetur distinctio eveniet debitis ad sapiente
+          iure eos quaerat ipsum facere dolorem laboriosam porro odio, enim
+          magnam natus recusandae optio expedita beatae.
+        </p>
+      </section>
+      <section>
+        <dialog id="CartModal" class="modal">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quos
+            nam laborum nemo deserunt maiores iste dolores atque iusto accusamus
+            assumenda quo ad labore quia magnam fugiat quaerat delectus maxime,
+            iure harum architecto. Eaque nisi cum voluptates assumenda est
+            cupiditate consequatur nam fugit, fugiat eligendi incidunt at ab non
+            iure.
+          </p>
+          <button onclick="CartModal.close()">Close</button>
+        </dialog>
+        <button class="btn" onclick="CartModal.showModal()">Open modal</button>
+        <button class="btn outline" onclick="CartModal.showModal()">
+          Open outline btn
+        </button>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="container"></div>
+    </footer>
+
+    <div class="cart-box" id="CartBox">
+      <div class="cart-box-header">
+        <h2>Cart</h2>
+        <button
+          class="cart-close"
+          onclick="document.querySelector('.cart-box').close()"
+        >
+          <i class="fa-solid fa-xmark fa-lg"></i>
+        </button>
+      </div>
+      <div class="cart-box-content">
+        <ul>
+          <li class="item">
+            <img
+              class="cart-item-image"
+              src="/images/products/iphone-14-pro.jpg"
+              alt="Product 1"
+            />
+            
+            <div class="cart-item-details">
+              <h3 class="name">Product 1</h3>
+              <p class="price">$10.00</p>
+            </div>
+            <button class="remove-btn btn">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="cart-box-footer">
+        <p class="total-price">Total: $10.00</p>
+        <button class="btn outline">Clear Cart</button>
+        <button class="btn">Checkout</button>
+      </div>
+    </div>
+
+
+    <div class="product">
+      <img
+        class="product-image"
+        src="/images/products/iphone-14-pro.jpg"
+        alt="Product Image"
+      />
+      <h3 class="product-name">Product Name</h3>
+      <p class="product-price">$10.00</p>
+      <button class="btn add-to-cart">Add to Cart</button>
+      <button class="btn outline add-to-favourite">
+        <i class="fa-solid fa-heart"></i>
+      </button>
+    </div>
     <script src="/js/main.js"></script>
   </body>
 </html>
