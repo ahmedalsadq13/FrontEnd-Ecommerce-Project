@@ -1,3 +1,4 @@
+
 function loadOrders(filterIdx = 0) {
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "/JsonFiles/OrdersFile.json", true);
@@ -90,8 +91,30 @@ async function renderOrders(orders) {
 
     
         orderItem.querySelector('.btn').addEventListener('click', () => {
-            alert(`Order #${order.orderId} details clicked!`);
+            const orderDetails = document.querySelector('.OrderDetailsContainer');
+            orderDetails.style.display = 'block';
+            orderItem.querySelector('.btn').style.backgroundColor = '#667a9e';
+            const orderDetailsContainer = document.querySelector('.order-details');
+            orderDetailsContainer.innerHTML = `
+                <h2>Order Details</h2>
+                <div class="order-info">
+                    <p><span>Order Id : </span><span>#${order.orderId}</span></p>
+                    <p><span>Order Date : </span><span>${order.Date || 'Un Known'}</span></p>
+                    <p><span>Order Status : </span><span style="color: ${order.status === 'Pending' ? '#eb2711' : '#28a745'};">${order.status}</span></p>
+                    <p><span>Payment Method : </span><span>${order.paymentMethod || 'Credit Card'}</span></p>
+                    <p><span>Number of Products : </span><span>${order.items ? order.items.length : 0}</span></p>
+                    <p><span>Total Amount : </span><span style="color:black">${total} Egp</span></p>
+                </div>
+            `;
         });
+
+        const closeButton = document.querySelector('.OrderDetailsContainer');
+        closeButton.addEventListener('click', () => {
+            document.querySelector('.OrderDetailsContainer').style.display = 'none';
+            orderItem.querySelector('.btn').style.backgroundColor = '#071a07';
+        });
+  
+        
     
         
         mainContainer.appendChild(orderItem);
