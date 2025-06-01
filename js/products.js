@@ -124,7 +124,7 @@ document.addEventListener('click', event => {
       if (quantity < 1) {
         controls.style.display = 'none';
         card.querySelector('.add-to-cart').style.display = 'block';
-        delete cart[productId];
+        delete cart[productId]; 
       } else {
         cart[productId].quantity = quantity;
         quantityLabel.textContent = quantity;
