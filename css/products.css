@@ -70,7 +70,6 @@ button {
 .product-card:hover .add-to-cart {
   transition: all .5s;
   transform: translateY(0%);
-  
 }
 
 .product-img {
@@ -277,7 +276,7 @@ footer {
   width: 100vw;
   height: 31vw;
   gap: 10px;
-  background-color: #7a757961;
+  background-color: whitesmoke;
 }
 
 /* Extra Small Devices (phones, <600px) */
@@ -319,7 +318,7 @@ footer {
     font-size: 20px;
     height: 40px;
     width: 100%;
-     text-align: center;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;

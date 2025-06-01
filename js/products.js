@@ -92,6 +92,7 @@ function showQuantity(button) {
       quantity: 1, 
       id: productId, 
       name: card.querySelector('.product-title').textContent, 
+      image: card.querySelector('.product-img').src,
       price: parseFloat(card.querySelector('.product-price-value').textContent) 
     };
   } else {
@@ -124,7 +125,7 @@ document.addEventListener('click', event => {
       if (quantity < 1) {
         controls.style.display = 'none';
         card.querySelector('.add-to-cart').style.display = 'block';
-        delete cart[productId]; 
+        delete cart[productId];
       } else {
         cart[productId].quantity = quantity;
         quantityLabel.textContent = quantity;
@@ -144,7 +145,13 @@ document.addEventListener('click', event => {
     const productId = card.dataset.productId;
 
     if (!favorites[productId]) {
-      favorites[productId] = { id: productId, name: card.querySelector('.product-title').textContent };
+      favorites[productId] = { 
+      quantity: 1, 
+      id: productId, 
+      name: card.querySelector('.product-title').textContent, 
+      image: card.querySelector('.product-img').src,
+      price: parseFloat(card.querySelector('.product-price-value').textContent) 
+    };
       icon.classList.replace('fa-regular', 'fa-solid');
     } else {
       delete favorites[productId];
