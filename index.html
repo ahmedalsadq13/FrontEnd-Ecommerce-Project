@@ -5,25 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ECommerce Project</title>
     <link rel="stylesheet" href="/css/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="/css/all.min.css" />
   </head>
-  <body>
+  <body class="home-page">
     <header class="main-header">
       <div class="container">
         <!-- <img src="" alt="company name" class="logo" /> -->
 
         <nav>
           <a href="/"><h2>CN</h2></a>
-          <ul>
+          <ul class="main-menu">
             <li><a href="/">Home</a></li>
             <li><a href="/pages/products.html">Products</a></li>
             <li><a href="/pages/about-us.html">About Us</a></li>
             <li><a href="/pages/contact-us.html">Contact Us</a></li>
           </ul>
 
+         
           <div class="right-side">
             <!-- <input type="search" name="search" id="search" placeholder="Search..." /> -->
 
@@ -36,37 +34,96 @@
             <button class="favourite"><i class="fa-solid fa-heart"></i></button>
             <button class="user"><i class="fa-solid fa-user"></i></button>
           </div>
+          <button class="mobile-menu-open">
+            <i class="fa-solid fa-bars"></i>
+          </button>
         </nav>
       </div>
     </header>
 
     <main class="container">
+   
+    
       <section>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-          consectetur quibusdam, itaque voluptates cupiditate pariatur odit
-          quidem blanditiis obcaecati suscipit eius modi totam illo debitis
-          quos. Eos, ratione? Tenetur distinctio eveniet debitis ad sapiente
-          iure eos quaerat ipsum facere dolorem laboriosam porro odio, enim
-          magnam natus recusandae optio expedita beatae.
-        </p>
-      </section>
-      <section>
-        <dialog id="CartModal" class="modal">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quos
-            nam laborum nemo deserunt maiores iste dolores atque iusto accusamus
-            assumenda quo ad labore quia magnam fugiat quaerat delectus maxime,
-            iure harum architecto. Eaque nisi cum voluptates assumenda est
-            cupiditate consequatur nam fugit, fugiat eligendi incidunt at ab non
-            iure.
-          </p>
-          <button onclick="CartModal.close()">Close</button>
-        </dialog>
-        <button class="btn" onclick="CartModal.showModal()">Open modal</button>
-        <button class="btn outline" onclick="CartModal.showModal()">
-          Open outline btn
-        </button>
+        <div class="container">
+          <div class="products">
+            <div class="product">
+              <a href="/pages/product-details.html">
+                <img
+                  class="product-image"
+                  src="/images/products/earbuds-pro.jpg"
+                  alt="Product Image"
+                />
+              </a>
+              <h3 class="product-name">Product Name</h3>
+              <p class="product-price">$10.00</p>
+              <button class="btn add-to-cart" data-id="1">Add to Cart</button>
+              <button class="btn outline add-to-favourite">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <div class="product">
+              <a href="/pages/product-details.html">
+                <img
+                  class="product-image"
+                  src="/images/products/smart-watch-5.webp"
+                  alt="Product Image"
+                />
+              </a>
+              <h3 class="product-name">Product Name</h3>
+              <p class="product-price">$10.00</p>
+              <button class="btn add-to-cart" data-id="2">Add to Cart</button>
+              <button class="btn outline add-to-favourite">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <div class="product" data-id="3">
+              <a href="/pages/product-details.html">
+                <img
+                  class="product-image"
+                  src="/images/products/wireless-charger.jpg"
+                  alt="Product Image"
+                />
+              </a>
+              <h3 class="product-name">Product Name</h3>
+              <p class="product-price">$10.00</p>
+              <button class="btn add-to-cart" data-id="3">Add to Cart</button>
+              <button class="btn outline add-to-favourite">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <div class="product" data-id="4">
+              <a href="/pages/product-details.html">
+                <img
+                  class="product-image"
+                  src="/images/products/bluetooth-speaker.jpg"
+                  alt="Product Image"
+                />
+              </a>
+              <h3 class="product-name">Product Name</h3>
+              <p class="product-price">$10.00</p>
+              <button class="btn add-to-cart" data-id="4">Add to Cart</button>
+              <button class="btn outline add-to-favourite">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <div class="product" data-id="6">
+              <a href="/pages/product-details.html">
+                <img
+                  class="product-image"
+                  src="/images/products/bluetooth-speaker.jpg"
+                  alt="Product Image"
+                />
+              </a>
+              <h3 class="product-name">Product Name</h3>
+              <p class="product-price">$10.00</p>
+              <button class="btn add-to-cart" data-id="6">Add to Cart</button>
+              <button class="btn outline add-to-favourite">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="main-footer">
@@ -78,9 +135,9 @@
         <h2>Cart</h2>
         <button
           class="cart-close"
-          onclick="document.querySelector('.cart-box').close()"
+          onclick="document.querySelector('.cart-box').closeCart()"
         >
-          <i class="fa-solid fa-xmark fa-lg"></i>
+          <i class="fa-solid fa-xmark fa-lg"></i>closeCart
         </button>
       </div>
       <div class="cart-box-content">
@@ -91,7 +148,7 @@
               src="/images/products/iphone-14-pro.jpg"
               alt="Product 1"
             />
-            
+
             <div class="cart-item-details">
               <h3 class="name">Product 1</h3>
               <p class="price">$10.00</p>
@@ -104,25 +161,42 @@
       </div>
       <div class="cart-box-footer">
         <p class="total-price">Total: $10.00</p>
-        <button class="btn outline">Clear Cart</button>
-        <button class="btn">Checkout</button>
+        <button class="btn outline clear-cart">Clear Cart</button>
+        <button class="btn checkout-btn">Checkout</button>
       </div>
     </div>
 
+    <div class="mobile-menu">
+      <!-- <img src="company-logo.png" alt="company logo"> -->
+      <header>
+        <h2>CN</h2>
+        <button class="mobile-menu-close">
+          <i class="fa-solid fa-xmark fa-lg"></i>
+        </button>
+      </header>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/pages/products.html">Products</a></li>
+        <li><a href="/pages/about-us.html">About Us</a></li>
+        <li><a href="/pages/contact-us.html">Contact Us</a></li>
+      </ul>
 
-    <div class="product">
-      <img
-        class="product-image"
-        src="/images/products/iphone-14-pro.jpg"
-        alt="Product Image"
-      />
-      <h3 class="product-name">Product Name</h3>
-      <p class="product-price">$10.00</p>
-      <button class="btn add-to-cart">Add to Cart</button>
-      <button class="btn outline add-to-favourite">
-        <i class="fa-solid fa-heart"></i>
+      <button class="cart-open">
+        <i class="fa-solid fa-cart-shopping"></i>
       </button>
+      <button class="favourite"><i class="fa-solid fa-heart"></i></button>
+      <button class="user"><i class="fa-solid fa-user"></i></button>
     </div>
+
+
+  
+    <dialog id="CartModal" class="modal">
+      <p>
+        Product Not Found
+      </p>
+      <button class="btn" onclick="CartModal.close()">Close</button>
+    </dialog>
+    
     <script src="/js/main.js"></script>
   </body>
 </html>

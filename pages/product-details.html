@@ -3,28 +3,232 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Product Details | ECommerce Project</title>
     <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/products.css" />
+    <link rel="stylesheet" href="/css/all.min.css" />
   </head>
-  <body>
-    <div class="products-holder">
-      <div class="product-card">
-        <img src="https://via.placeholder.com/150" alt="Product Image" />
-        <h2>product name</h2>
-        <button>Add to cart</button>
+  <body class="product-details-page">
+    <header class="main-header">
+      <div class="container">
+        <!-- <img src="" alt="company name" class="logo" /> -->
+
+        <nav>
+          <a href="/"><h2>CN</h2></a>
+          <ul class="main-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/pages/products.html">Products</a></li>
+            <li><a href="/pages/about-us.html">About Us</a></li>
+            <li><a href="/pages/contact-us.html">Contact Us</a></li>
+          </ul>
+
+         
+          <div class="right-side">
+            <!-- <input type="search" name="search" id="search" placeholder="Search..." /> -->
+
+            <button class="search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="cart-open">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <button class="favourite"><i class="fa-solid fa-heart"></i></button>
+            <button class="user"><i class="fa-solid fa-user"></i></button>
+          </div>
+          <button class="mobile-menu-open">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </nav>
       </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/150" alt="Product Image" />
-        <h2>product name</h2>
-        <button>Add to cart</button>
+    </header>
+
+    <main class="container">
+      <section class="product-details">
+        <div class="product-gallery">
+          <div class="main-image">
+            <img src="/images/products/iphone-14-pro.jpg" alt="iPhone 14 Pro" />
+          </div>
+          <div class="thumbnail-images">
+            <img src="/images/products/earbuds-pro.jpg" alt="Thumbnail 1" />
+            <img src="/images/products/wireless-charger.jpg" alt="Thumbnail 2" />
+            <img src="/images/products/bluetooth-speaker.jpg" alt="Thumbnail 3" />
+            <img src="/images/products/laptop-backpack.jpg" alt="Thumbnail 4" />
+          </div>
+        </div>
+        
+        <div class="product-info">
+          <h1 class="product-title">iPhone 14 Pro</h1>
+          <div class="product-meta">
+            <span class="product-price">$999.00</span>
+            <span class="product-stock">In Stock (50 available)</span>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+              <span>(24 reviews)</span>
+            </div>
+          </div>
+          
+          <div class="product-description">
+            <p>The iPhone 14 Pro features a stunning Super Retina XDR display, A16 Bionic chip, and an advanced camera system for incredible photos in any light. With Dynamic Island and always-on display, it's our most innovative Pro lineup yet.</p>
+            <ul>
+              <li>6.1-inch Super Retina XDR display with ProMotion</li>
+              <li>Dynamic Island - A new way to interact with iPhone</li>
+              <li>48MP Main camera for up to 4x greater resolution</li>
+              <li>Cinematic mode now in 4K HDR at 24 fps</li>
+              <li>A16 Bionic chip with 5-core GPU</li>
+              <li>Emergency SOS via satellite and Crash Detection</li>
+            </ul>
+          </div>
+          
+          <div class="product-actions">
+            <div class="quantity-selector">
+              <button class="quantity-btn">-</button>
+              <input type="number" value="1" min="1" max="10" />
+              <button class="quantity-btn">+</button>
+            </div>
+            <button class="btn add-to-cart" data-id="1">Add to Cart</button>
+            <button class="btn outline add-to-favourite">
+              <i class="fa-solid fa-heart"></i> Add to Wishlist
+            </button>
+          </div>
+          
+          <div class="product-specs">
+            <h3>Specifications</h3>
+            <table>
+              <tr>
+                <th>Brand</th>
+                <td>Apple</td>
+              </tr>
+              <tr>
+                <th>Model</th>
+                <td>iPhone 14 Pro</td>
+              </tr>
+              <tr>
+                <th>Color</th>
+                <td>Space Black</td>
+              </tr>
+              <tr>
+                <th>Storage</th>
+                <td>128GB</td>
+              </tr>
+              <tr>
+                <th>Operating System</th>
+                <td>iOS 16</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+      
+      <section class="related-products">
+        <h2>You May Also Like</h2>
+        <div class="products">
+          <div class="product">
+            <img
+              class="product-image"
+              src="/images/products/iphone-14-pro.jpg"
+              alt="iPhone 14 Case"
+            />
+            <h3 class="product-name">iPhone 14 Pro Case</h3>
+            <p class="product-price">$39.99</p>
+            <button class="btn add-to-cart" data-id="6">Add to Cart</button>
+            <button class="btn outline add-to-favourite">
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
+          <div class="product">
+            <img
+              class="product-image"
+              src="/images/products/iphone-14-pro.jpg"
+              alt="AirPods Pro"
+            />
+            <h3 class="product-name">AirPods Pro (2nd Gen)</h3>
+            <p class="product-price">$249.00</p>
+            <button class="btn add-to-cart" data-id="7">Add to Cart</button>
+            <button class="btn outline add-to-favourite">
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
+          <div class="product">
+            <img
+              class="product-image"
+              src="/images/products/iphone-14-pro.jpg"
+              alt="MagSafe Charger"
+            />
+            <h3 class="product-name">MagSafe Charger</h3>
+            <p class="product-price">$39.00</p>
+            <button class="btn add-to-cart" data-id="8">Add to Cart</button>
+            <button class="btn outline add-to-favourite">
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="main-footer">
+      <div class="container">
+        <p>&copy; 2023 ECommerce Project. All rights reserved.</p>
       </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/150" alt="Product Image" />
-        <h2>product name</h2>
-        <button>Add to cart</button>
+    </footer>
+    
+    <div class="cart-box" id="CartBox">
+      <div class="cart-box-header">
+        <h2>Cart</h2>
+        <button
+          class="cart-close"
+          onclick="document.querySelector('.cart-box').close()"
+        >
+          <i class="fa-solid fa-xmark fa-lg"></i>
+        </button>
+      </div>
+      <div class="cart-box-content">
+        <ul>
+          <li class="item">
+            <img
+              class="cart-item-image"
+              src="/images/products/iphone-14-pro.jpg"
+              alt="Product 1"
+            />
+
+            <div class="cart-item-details">
+              <h3 class="name">Product 1</h3>
+              <p class="price">$10.00</p>
+            </div>
+            <button class="remove-btn btn">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="cart-box-footer">
+        <p class="total-price">Total: $10.00</p>
+        <button class="btn outline clear-cart">Clear Cart</button>
+        <button class="btn checkout-btn">Checkout</button>
       </div>
     </div>
+
+    <div class="mobile-menu">
+      <button class="mobile-menu-close">
+        <i class="fa-solid fa-xmark fa-lg"></i>
+      </button>
+      <h2>CN</h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/pages/products.html">Products</a></li>
+        <li><a href="/pages/about-us.html">About Us</a></li>
+        <li><a href="/pages/contact-us.html">Contact Us</a></li>
+      </ul>
+
+      <button class="cart-open">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
+      <button class="favourite"><i class="fa-solid fa-heart"></i></button>
+      <button class="user"><i class="fa-solid fa-user"></i></button>
+    </div>
     <script src="/js/main.js"></script>
+    <!-- <script src="/js/product-details.js"></script> -->
   </body>
 </html>
