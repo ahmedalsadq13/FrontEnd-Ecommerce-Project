@@ -37,7 +37,7 @@ function loginValidation(event) {
      }));
 
 
-     window.location.href = "index.html"; // Redirect to the home page after successful login
+     window.location.href = "../index.html"; // Redirect to the home page after successful login
      return true; 
 }
 
