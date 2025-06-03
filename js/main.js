@@ -238,36 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // // Add to cart button
-  // const addToCartBtn = document.querySelector(".add-to-cart");
-  // if (addToCartBtn) {
-  //   addToCartBtn.addEventListener("click", function () {
-  //     const productId = parseInt(this.dataset.id);
-  //     const quantity = parseInt(quantityInput.value);
-
-  //     // Find product in your products array
-  //     const product = products.find((p) => p.id === productId);
-
-  //     if (product) {
-  //       // Add to cart with quantity
-  //       let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-  //       let existing = cart.find((item) => item.id === product.id);
-
-  //       if (existing) {
-  //         existing.quantity += quantity;
-  //       } else {
-  //         cart.push({ ...product, quantity });
-  //       }
-
-  //       localStorage.setItem("cart", JSON.stringify(cart));
-  //       updateCartDisplay();
-  //       openCart();
-
-  //       // Show success message
-  //       alert(`${quantity} ${product.name} added to cart!`);
-  //     }
-  //   });
-  // }
+ 
 
   // Initialize cart functionality
   initCart();
