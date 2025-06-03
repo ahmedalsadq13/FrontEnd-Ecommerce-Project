@@ -39,3 +39,5 @@ function getAllContactUsMsgs() {
     const contacts = JSON.parse(localStorage.getItem("contacts") || "[]");
     console.log(contacts);
 }
+
+
