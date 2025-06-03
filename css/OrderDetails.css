@@ -1,0 +1,51 @@
+.MainDetailsContainer {
+  display:-webkit-box;
+  gap: 20px;
+  
+}
+.OrderDetailsContainer {
+    border-radius: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 33%;
+    background-color: #5350503b;
+    height: 50vh;
+    overflow-y: auto;  
+    display: none;
+
+}
+.OrderDetailsContainer.active {
+    display: block;
+}
+.OrderDetailsContainer.close {
+    display: none;
+}
+.close{
+  display: none;
+}
+.OrderDetailsContainer h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+}
+.OrderDetailsContainer p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.OrderDetailsContainer p span {
+    font-weight: bold;
+}
+.OrderDetailsContainer p span:nth-child(2) {
+    font-weight: normal;
+}
+.OrderDetailsContainer p:last-child {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 30%;
+    color: #eb2711;
+}
+
+
+

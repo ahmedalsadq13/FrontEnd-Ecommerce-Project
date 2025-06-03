@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Products</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="/css/products.css">
+</head>
+<body>
+    <div id="product-container" class="product-container"></div>
+
+    <script>
+
+   const initializeStorage = (key, defaultValue) => {
+  if (!localStorage.getItem(key)) {
+    localStorage.setItem(key, JSON.stringify(defaultValue));
+  }
+  return JSON.parse(localStorage.getItem(key));
+};
+
+const favorites = initializeStorage('favorites', {});
+const cart = initializeStorage('cart', {});
+
+function renderProducts(products) {
+  const container = document.getElementById('product-container');
+  container.innerHTML = '';
+
+  products.forEach(product => {
+
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.dataset.productId = product.id;
+    card.innerHTML = `
+      <div class="product-cover">
+        <span class="discount-flag">10% OFF</span>
+        <button class="favorit" aria-label="Toggle favorite for ${product.name}">
+          <i class="${favorites[product.id] ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
+        </button>
+        <a href="/product/${product.id}" aria-label="${product.name}">
+          <img class="product-img" src="${product.image}" alt="${product.name}" loading="lazy">
+        </a>
+      </div>
+      <div class="content">
+        <h3 class="product-title">${product.name}</h3>
+        <div class="product-price">
+          <span class="currency">$</span>
+          <span class="product-price-value">${product.price.toFixed(2)}</span>
+        </div>
+        <div class="product-discount">
+          <span class="product-old-price"><del>${(product.price * 1.1).toFixed(2)}</del></span>
+          <span class="product-discount-percentage">10%</span>
+        </div>
+        <span class="product-rating">
+          ${'<i class="fa-solid fa-star"></i>'.repeat(4)}
+          <span class="product-rating-count">(4.3k)</span>
+        </span>
+      </div>
+      <footer style="margin-top: 10px;">
+        <button class="add-to-cart" onclick="showQuantity(this)">Add to Cart</button>
+        <span class="quantity-controls" style="display: ${cart[product.id] ? 'flex' : 'none'};">
+          <button data-action="decrement" class="mbutton">-</button>
+          <span class="quantity-label">${cart[product.id]?.quantity || 1}</span>
+          <button data-action="increment" class="mbutton">+</button>
+        </span>
+      </footer>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function showQuantity(button) {
+  const card = button.closest('.product-card');
+  const controls = card.querySelector('.quantity-controls');
+  const productId = card.dataset.productId;
+
+  if (!cart[productId]) {
+    cart[productId] = { 
+      quantity: 1, 
+      id: productId, 
+      name: card.querySelector('.product-title').textContent, 
+      image: card.querySelector('.product-img').src,
+      price: parseFloat(card.querySelector('.product-price-value').textContent) 
+    };
+  } else {
+    cart[productId].quantity += 1;
+  }
+
+  controls.querySelector('.quantity-label').textContent = cart[productId].quantity;
+  localStorage.setItem('cart', JSON.stringify(cart));
+  button.style.display = 'none';
+  controls.style.display = 'flex';
+}
+
+document.addEventListener('click', event => {
+  const target = event.target.closest('button');
+  if (!target) return;
+
+  if (target.matches('.quantity-controls button')) {
+    const action = target.dataset.action;
+    const controls = target.closest('.quantity-controls');
+    const card = controls.closest('.product-card');
+    const productId = card.dataset.productId;
+    const quantityLabel = controls.querySelector('.quantity-label');
+
+    if (!cart[productId]) return;
+
+    let quantity = cart[productId].quantity;
+
+    if (action === 'decrement') {
+      quantity--;
+      if (quantity < 1) {
+        controls.style.display = 'none';
+        card.querySelector('.add-to-cart').style.display = 'block';
+        delete cart[productId];
+      } else {
+        cart[productId].quantity = quantity;
+        quantityLabel.textContent = quantity;
+      }
+    } else if (action === 'increment') {
+      quantity++;
+      cart[productId].quantity = quantity;
+      quantityLabel.textContent = quantity;
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  if (target.matches('.favorit')) {
+    const icon = target.querySelector('i');
+    const card = target.closest('.product-card');
+    const productId = card.dataset.productId;
+
+    if (!favorites[productId]) {
+      favorites[productId] = { 
+      quantity: 1, 
+      id: productId, 
+      name: card.querySelector('.product-title').textContent, 
+      image: card.querySelector('.product-img').src,
+      price: parseFloat(card.querySelector('.product-price-value').textContent) 
+    };
+      icon.classList.replace('fa-regular', 'fa-solid');
+    } else {
+      delete favorites[productId];
+      icon.classList.replace('fa-solid', 'fa-regular');
+      card.remove();
+    }
+
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }
+});
+window.onload = () => {
+  renderProducts(Object.values(favorites));
+};
+    </script>
+</body>
+</html>

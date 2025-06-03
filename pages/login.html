@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/LoginStyle.css">
+</head>
+<body>
+    <section id="loginContainer">
+        <div id="login">
+            <h1>login</h1>
+            <form action="" method="post" onsubmit="loginValidation(event)"><!-- Add your form action here -->
+                <div id="inputs">
+                    
+                         <label for="email">Email</label>
+                         <div>
+                            <input type="email" id="email" name="Email" placeholder="Enter The Email" required>
+                             <span id="loginEmailError" class="error"></span>
+                         </div>
+                         
+                
+                      <label for="password">Password</label>
+                      <div>
+                            <input type="password" id="password" name="Password" placeholder="Enter The password" required>
+                            <span id="loginPasswordError" class="error"></span>
+                      </div>
+                    
+                    
+                </div>
+                <button id="btn" type="submit">Login</button>
+                <br>
+                <a href="register.html" id="registerLink">create new account</a>
+            </form>
+
+        </div>
+
+        <div id="imageContainer"> 
+            <img id="loginImage" src="../images/imageForLogin.webp" alt="login image">
+        </div>
+    </section>
+    <script src="../js/Login.js"></script>
+</body>
+</html>

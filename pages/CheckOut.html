@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckOut</title>
+    <link rel="stylesheet" href="../css/CheckOut.css">
+</head>
+<body>
+    <section id="mainContainer">
+        <div id="info">
+            <h1>check out</h1>
+            <form action="" method="post">
+                <div id="input">
+                    <!-- <div>
+                        <label for="fname">Frist Name</label>
+                        <input type="text" id="fname" name="FName" required>
+                    </div> -->
+                    <label for="fname">Frist Name</label>
+                    <div>
+                        <input type="text" id="fname" name="FName" placeholder="Enter The Frist Name" required>
+                        <span id="fnameError" class="error"></span>
+                    </div>
+                    
+                    
+
+                    <label for="lname">Last Name</label>
+                    <div>
+                        <input type="text" id="lname" name="LName" placeholder="Enter The Last Name" required>
+                         <span id="lnameError" class="error"></span>
+                    </div>
+                    
+
+                    <label for="email">Email:</label>
+                    <div>
+                        <input type="email" id="email" name="Email" placeholder="Enter The Email" required>
+                        <span id="emailError" class="error"></span>
+                    </div>
+                    
+
+                    
+                    <label for="phone">Phone Number</label>
+                    <div>
+                        <input type="tel" id="phone" name="Phone" placeholder="Enter The phone Number" required>
+                        <span id="phoneError" class="error"></span>
+                    </div>
+                    
+
+                   
+                    <label for="city">City</label>
+                     <div>
+                        <input type="text" id="city" name="city" placeholder="Enter The city" required>
+                        <span id="cityError" class="error"></span>
+                     </div>
+                    
+
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" placeholder="Enter The state " required>
+
+                    <!-- <label for="zip">Zip Code</label>
+                    <input type="text" id="zip" name="zip" required> -->
+
+                    <label for="description">Description</label>
+                    <textarea id="description" name="Description" rows="4" cols="5"></textarea>
+                </div>
+                    
+
+            </form>
+        </div>
+
+
+        <div id="orderSummary">
+            <h2>Order Summary </h2>
+            <div id="orders">
+                <div class="orderItem">
+
+                    <div id="itemDetails">
+                        <div class="order">
+                            <img class="orderImages" src="../images/bag.webp" alt="bag Item 1">  
+                            <div>
+                                <p class="orderName">Woman BackBag</p> 
+                                <p>count : <span class="count">1</span></p>
+                            </div> 
+                        </div>
+                        <p class="price">$15.00</p>
+                    </div>
+
+                    <div id="itemDetails">
+                        <div class="order">
+                            <img class="orderImages" src="../images/phone.jpg" alt="bag Item 1">  
+                            <div>
+                                <p class="orderName"> smart infinx phone</p> 
+                                <p>count : <span class="count">1</span></p>
+                            </div>
+                        </div>
+                        <p class="price">$50.00</p>
+                    </div>
+
+                     <div id="itemDetails">
+                        <div class="order">
+                            <img class="orderImages" src="../images/bag.webp" alt="bag Item 1">  
+                            <div>
+                                <p class="orderName">Woman BackBag</p> 
+                                <p>count : <span class="count">1</span></p>
+                            </div>
+                            
+                        </div>
+                        <p class="price">$15.00</p>
+                    </div>
+
+                </div>
+                
+            </div>
+            <div id="priceContainer">
+                    <div class="priceDetails">
+                        <p>Subtotal</p>
+                        <p id="Subtotal">$65.00</p>
+                    </div>
+
+                    <div class="priceDetails">
+                        <p>Shipping</p>
+                        <p id="Shipping">$5.00</p>
+                    </div>
+                    <hr>
+                    
+                    <div id="totalPrice"  class="priceDetails">
+                        <p>Total</p>
+                        <p id="Total">$70.00</p>
+                    </div>
+                    <button  id="payment"  >Continue to Payment</button> <!-- type="submit" --> 
+
+                </div>
+        </div>
+
+    </section>
+
+    <script src="../js/CheckOut.js"></script>
+</body>
+</html>
