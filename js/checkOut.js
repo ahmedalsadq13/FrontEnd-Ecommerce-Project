@@ -73,6 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     Object.values(cart).forEach(item => {
       
+        if (!item.name || !item.price || !item.quantity || !item.image) {
+            return;
+        }
         const itemTotal = item.price * item.quantity;
         subtotal += itemTotal;
         
