@@ -8,6 +8,7 @@ const initializeStorage = (key, defaultValue) => {
 
 const cart = initializeStorage('cart', {});
 const favorites = initializeStorage('favorites', {});
+let allProducts = [];
 
 async function fetchAndRenderProducts(categoryId = null) {
   const container = document.getElementById('product-container');
@@ -18,6 +19,8 @@ async function fetchAndRenderProducts(categoryId = null) {
     if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
     let products = await response.json();
+    allProducts = products;
+
     if (!Array.isArray(products)) throw new Error('API response is not an array');
 
     if (categoryId && categoryId !== 'all') {
@@ -207,6 +210,16 @@ function loadCategories() {
 }
 
 window.onload = () => {
+  // Initialize cart and favorites from localStorage
+  
   loadCategories();
   fetchAndRenderProducts();
 };
+
+document.getElementById('search-input').addEventListener('input', function () {
+  const searchTerm = this.value.toLowerCase();
+  const filtered = allProducts.filter(product => 
+    product.name.toLowerCase().includes(searchTerm)
+  );
+  renderProducts(filtered);
+});

@@ -1,11 +1,16 @@
 
-function loadOrders(filterIdx = 0) {
+function loadOrders(filterIdx = 0, searchQuery = '') {
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "/JsonFiles/OrdersFile.json", true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             const orders = JSON.parse(xhr.responseText);
-            const filteredOrders = filterOrders(orders, filterIdx);
+            let filteredOrders = filterOrders(orders, filterIdx);
+            if (searchQuery.trim() !== '') {
+                filteredOrders = filteredOrders.filter(order =>
+                    String(order.orderId).includes(searchQuery.trim())
+                );
+            }
             updateHeaderCounts(orders);
             renderOrders(filteredOrders);
             updateButtonStates(filterIdx);
@@ -135,3 +140,8 @@ document.querySelectorAll('.Secondry-Header button').forEach((button, idx) => {
     button.addEventListener('click', () => loadOrders(idx));
 });
 loadOrders();
+document.getElementById('order-search').addEventListener('input', () => {
+    const searchQuery = document.getElementById('order-search').value;
+    const activeIdx = [...document.querySelectorAll('.Secondry-Header button')].findIndex(btn => btn.classList.contains('active'));
+    loadOrders(activeIdx, searchQuery);
+});
