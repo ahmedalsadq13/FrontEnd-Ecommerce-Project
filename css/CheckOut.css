@@ -5,7 +5,8 @@
     
 }
 #mainContainer{
-    height: 800px;
+    /* height: 800px; */
+    height: 100vh;
     display: flex;
     /* justify-content: space-around; */
     justify-content: center;
@@ -54,6 +55,11 @@ label{
     font-size: large;
 }
 
+.error{
+    font-size: small;
+    color: red;
+    padding-left: 30px;
+}
 
 /*//////////////////////////////////////////////////////// your items style /////////////////////////////////////////////////////////*/
 #orderSummary{
@@ -85,8 +91,9 @@ label{
     gap: 15px;
 }
 .orderImages{
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
+    border-radius: 15px;
 }
 .orderName{
     font-size: large;
