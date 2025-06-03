@@ -1,4 +1,4 @@
-.container{
+.container11{
     display: flex;
     justify-content:flex-start;
     align-items: center;
@@ -8,11 +8,11 @@
     background-color: #ffffff;
     box-shadow: 10px 10px 20px #6782a2 , 
                 -10px -10px 10px rgba(98, 98, 98, 0.8);
-    margin: 20vh auto;
+    margin: 9vh auto;
     gap: 20px;
     padding-left: 20vh;
 }
-.icons{
+.icons11{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,7 @@
     font-size: 2rem;
     color: #000;
 }
-.icons a{
+.icons11 a{
     color: #000000;
     text-decoration: none;
 }

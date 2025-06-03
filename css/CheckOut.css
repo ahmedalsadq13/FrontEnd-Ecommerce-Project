@@ -6,7 +6,7 @@
 }
 #mainContainer{
     /* height: 800px; */
-    height: 100vh;
+    height: 90vh;
     display: flex;
     /* justify-content: space-around; */
     justify-content: center;
@@ -18,7 +18,7 @@
 /*//////////////////////////////////////////////////////// checkout information style /////////////////////////////////////////////////////////*/
 #info{
     width: 45%;
-    height: 750px;
+    height: 800px;
     background-color: white;
     display: flex;
     flex-direction: column;

@@ -2,10 +2,15 @@ body {
     margin: 0;
 }
 .footer {
-  background-color: #111827;
+  background-color: #000000c4;
   color: #e5e7eb;
   padding: 40px 20px 20px;
   font-family: 'Segoe UI', sans-serif;
+  margin-top: 10vh;
+  /* border-radius: 1rem;
+  margin-inline: auto;
+  max-width: 95vw; */
+
   
 }
 
@@ -20,7 +25,7 @@ body {
 
 .footer-section h2,
 .footer-section h3 {
-  color: #facc15;
+  color: #ffffff;
   margin-bottom: 15px;
 }
 
@@ -63,7 +68,7 @@ body {
 .footer-bottom {
   text-align: center;
   margin-top: 30px;
-  border-top: 1px solid #374151;
+  border-top: 1px solid #777a80;
   padding-top: 15px;
   font-size: 13px;
   color: #9ca3af;
