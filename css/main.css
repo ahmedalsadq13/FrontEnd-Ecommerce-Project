@@ -134,7 +134,6 @@ input {
   height: 100%;
   backdrop-filter: blur(8px);
   transition: 0.4s;
-
   header {
     display: flex;
     align-items: center;
