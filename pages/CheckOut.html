@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckOut</title>
+    <link rel="stylesheet" href="/css/CheckOut.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="/css/Orders.css">
+    <link rel="stylesheet" href="/css/OrderDetails.css">
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="/css/footer.css">
+
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <!-- <img src="" alt="company name" class="logo" /> -->
+
+            <nav>
+                <a href="/index.html">
+                    <h2>EasyBuy</h2>
+                </a>
+                <ul class="main-menu">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/ProductsPage.html">Products</a></li>
+                    <li><a href="/pages/ContactUs.html">Contact Us</a></li>
+                </ul>
+
+
+                <div class="right-side">
+                    <!-- <input type="search" name="search" id="search" placeholder="Search..." /> -->
+
+                    <button class="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <button class="cart-open">
+                        <a href="/pages/CheckOut.html" class="cart-open">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </button>
+                    <button class="orders">
+                        <a href="/pages/Orders.html" class="orders">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </a>
+                    </button>
+                    <button class="favourite">
+                        <a href="/pages/favorite.html" class="favourite">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </button>
+                    <button class="user">
+                        <a href="/pages/user-profile.html" class="user">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                    </button>
+                </div>
+                <button class="mobile-menu-open">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <section id="mainContainer">
+        <div id="info">
+            <h1>check out</h1>
+            <form action="/index.html" method="post">
+                <div id="input">
+                    <!-- <div>
+                        <label for="fname">Frist Name</label>
+                        <input type="text" id="fname" name="FName" required>
+                    </div> -->
+                    <label for="fname">Frist Name</label>
+                    <div>
+                        <input type="text" id="fname" name="FName" placeholder="Enter The Frist Name" required>
+                        <span id="fnameError" class="error"></span>
+                    </div>
+                    
+                    
+
+                    <label for="lname">Last Name</label>
+                    <div>
+                        <input type="text" id="lname" name="LName" placeholder="Enter The Last Name" required>
+                         <span id="lnameError" class="error"></span>
+                    </div>
+                    
+
+                    <label for="email">Email:</label>
+                    <div>
+                        <input type="email" id="email" name="Email" placeholder="Enter The Email" required>
+                        <span id="emailError" class="error"></span>
+                    </div>
+                    
+
+                    
+                    <label for="phone">Phone Number</label>
+                    <div>
+                        <input type="tel" id="phone" name="Phone" placeholder="Enter The phone Number" required>
+                        <span id="phoneError" class="error"></span>
+                    </div>
+                    
+
+                   
+                    <label for="city">City</label>
+                     <div>
+                        <input type="text" id="city" name="city" placeholder="Enter The city" required>
+                        <span id="cityError" class="error"></span>
+                     </div>
+                    
+
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" placeholder="Enter The state " required>
+
+                    <!-- <label for="zip">Zip Code</label>
+                    <input type="text" id="zip" name="zip" required> -->
+
+                    <label for="description">Description</label>
+                    <textarea id="description" name="Description" rows="4" cols="5"></textarea>
+                </div>
+                    
+
+            </form>
+        </div>
+
+
+        <div id="orderSummary">
+            <h2>Order Summary </h2>
+            <div id="orders">
+                <div class="orderItem">
+
+                    <div id="itemDetails">
+                        <div class="order">
+                            <img class="orderImages" src="../images/bag.webp" alt="bag Item 1">  
+                            <div>
+                                <p class="orderName">Woman BackBag</p> 
+                                <p>count : <span class="count">1</span></p>
+                            </div> 
+                        </div>
+                        <p class="price">$15.00</p>
+                    </div>
+
+                    <div id="itemDetails">
+                        <div class="order">
+                            <img class="orderImages" src="../images/phone.jpg" alt="bag Item 1">  
+                            <div>
+                                <p class="orderName"> smart infinx phone</p> 
+                                <p>count : <span class="count">1</span></p>
+                            </div>
+                        </div>
+                        <p class="price">$50.00</p>
+                    </div>
+
+                     <div id="itemDetails">
+                        <div class="order">
+                            <img class="orderImages" src="../images/bag.webp" alt="bag Item 1">  
+                            <div>
+                                <p class="orderName">Woman BackBag</p> 
+                                <p>count : <span class="count">1</span></p>
+                            </div>
+                            
+                        </div>
+                        <p class="price">$15.00</p>
+                    </div>
+
+                </div>
+                
+            </div>
+            <div id="priceContainer">
+                    <div class="priceDetails">
+                        <p>Subtotal</p>
+                        <p id="Subtotal">$65.00</p>
+                    </div>
+
+                    <div class="priceDetails">
+                        <p>Shipping</p>
+                        <p id="Shipping">$5.00</p>
+                    </div>
+                    <hr>
+                    
+                    <div id="totalPrice"  class="priceDetails">
+                        <p>Total</p>
+                        <p id="Total">$70.00</p>
+                    </div>
+                    <button  id="payment"  >Continue to Payment</button> <!-- type="submit" --> 
+
+                </div>
+        </div>
+
+    </section>
+    <div style="margin-top: -110px;">
+
+<footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>EasyBuy</h2>
+                <p>Your trusted e-commerce platform for top-quality products and excellent service. We make online
+                    shopping easier, safer, and smarter.</p>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/ProductsPage.html">Shop</a></li>
+                    <li><a href="/pages/ProductsPage.html">Categories</a></li>
+                    <li><a href="/pages/ContactUs.html">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@easybuy.com</p>
+                <p>Phone: +20 127 857 6490</p>
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://youtu.be/ttza41X-O6k?si=jjxmFjq89Dy9I_cP" target="_blank"><i
+                            class='bx bxl-youtube'></i></a>
+                    <a href="https://wa.me/201278576490" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 <strong>EasyBuy</strong>. All rights reserved. | <a href="#">Privacy Policy</a> | <a
+                    href="#">Terms & Conditions</a></p>
+        </div>
+    </footer>
+        </div>
+
+    <script src="../js/CheckOut.js"></script>
+</body>
+</html>

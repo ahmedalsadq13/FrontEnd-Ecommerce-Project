@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="../css/registerStyle.css">
+</head>
+<body>
+    <section id="mainContainer">
+
+        <div id="registerFormContainer">
+             <h1>create new account</h1>
+            <form id="registerForm"  method="post" ><!-- onsubmit="" on submite validation -->
+
+              <label for="fname">Frist Name</label>
+              <div>
+                 <input type="text" id="fname" name="FName" placeholder="Enter The First Name" required>
+                 <span id="fnameError" class="error"></span>
+              </div>
+             
+              <label for="lname">Last Name</label>
+               <div>
+                 <input type="text" id="lname" name="LName" placeholder="Enter The Last Name" required>
+                 <span id="lastNameError" class="error"></span>
+              </div>
+
+              <label for="email">Email</label>
+               <div>
+                 <input type="email" id="email" name="Email" placeholder="Enter The Email" required>
+                 <span id="emailError" class="error"></span>
+              </div>
+
+              <label for="password">Password</label>
+               <div>
+                 <input type="password" id="password" name="Password" placeholder="Enter the password" required>
+                  <span id="passwordError" class="error"></span>
+              </div>
+
+              <button id="btnRegister" type="submit">Register</button>
+
+            </form>
+            
+              
+
+        </div>
+
+        
+
+    </section>
+    <script src="../js/register.js"></script>
+</body>
+</html>
